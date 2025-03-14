@@ -1,0 +1,117 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 40% 17%;
+    --foreground: 210 40% 98%;
+
+    --card: 260 45% 20%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 260 40% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 45% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 40% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 40% 25%;
+    --muted-foreground: 240 5% 75%;
+
+    --accent: 260 45% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 40% 25%;
+    --input: 260 40% 25%;
+    --ring: 260 45% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 265 45% 13%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 260 45% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 40% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 260 40% 25%;
+    --sidebar-ring: 260 45% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl bg-card p-5 shadow-md transition-all hover:shadow-lg;
+  }
+  
+  .stat-card-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded-full text-white;
+  }
+  
+  .glassmorphism {
+    @apply bg-white bg-opacity-10 backdrop-blur-lg backdrop-filter border border-white border-opacity-20 rounded-xl;
+  }
+  
+  .chart-container {
+    @apply rounded-xl bg-card p-5 shadow-md;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
+  }
+
+  .neon-glow {
+    @apply shadow-[0_0_15px_rgba(124,77,255,0.5)];
+  }
+  
+  .neon-border {
+    @apply border border-gym-neonpurple/50;
+  }
+  
+  .dashboard-card {
+    @apply bg-card rounded-xl shadow-md border border-gym-purpleLight/20 overflow-hidden;
+  }
+  
+  .grid-card {
+    @apply p-5 dashboard-card;
+  }
+  
+  /* Card colors matching the image */
+  .card-blue {
+    @apply bg-gym-blueAccent/20 border-gym-blueAccent/30;
+  }
+  
+  .card-purple {
+    @apply bg-gym-purpleHighlight/20 border-gym-purpleHighlight/30;
+  }
+  
+  .card-pink {
+    @apply bg-pink-500/20 border-pink-500/30;
+  }
+  
+  .card-cyan {
+    @apply bg-cyan-500/20 border-cyan-500/30;
+  }
+}
